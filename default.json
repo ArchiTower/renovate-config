@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "config:base",
+    "group:allNonMajor",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "branchPrefix": "deps-",
+  "baseBranches": [
+    "develop"
+  ],
+  "rangeStrategy": "bump",
+  "npm": {
+    "commitMessageTopic": "{{prettyDepType}} {{depName}}",
+    "commitMessagePrefix": ":arrow_up: chore(deps):"
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeSchedule": [
+        "after 1am and before 2am"
+      ],
+      "schedule": [
+        "after 2am and before 3am"
+      ]
+    }
+  ]
+}
