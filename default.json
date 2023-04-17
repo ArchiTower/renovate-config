@@ -41,6 +41,17 @@
       ]
     },
     {
+      "matchManagers": ["github-actions"],
+      "groupName": "all ci dependencies",
+      "groupSlug": "ci-all-minor-patch",
+      "commitMessageTopic": "{{prettyDepType}} {{depName}}",
+      "commitMessagePrefix": ":construction_worker: ci(deps):",
+      "automerge": true,
+      "automergeSchedule": [
+        "after 1am and before 2am"
+      ]
+    },
+    {
       "matchUpdateTypes": [
         "major"
       ],
